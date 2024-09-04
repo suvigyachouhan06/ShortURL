@@ -20,7 +20,8 @@ const handleGenerateNewShortURL = async (req, res) => {
     });
 
     // Return the generated short ID
-    return res.json({ id: shortId });
+    return res.render("home",
+        { id: shortId});
 };
 
 async function handleGetAnalytics(req,res) {

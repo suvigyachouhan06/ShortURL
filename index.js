@@ -11,6 +11,7 @@ app.set("view engine","ejs");
 app.set("views", path.resolve("./views"))
 // Middleware to parse JSON bodies (only needs to be included once)
 app.use(express.json());
+app.use(express.urlencoded({extended:false}))
 
 connectToMongodb('mongodb://127.0.0.1:27017/shorturl').then(() => console.log("MongoDB Connected"));
 
